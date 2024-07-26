@@ -1,6 +1,6 @@
 import bannerImagem from '../../assets/banner.png'
 import { Button } from '../../components/Button';
-import { Header } from '../../components/Header/idex';
+import { Header } from '../../components/Header/index';
 import { Container, TextContent, Title, TitleHighlight } from './styles';
 
 const Home = () => {
