@@ -8,6 +8,7 @@ import { Button } from '../../components/Button';
 import { Header } from '../../components/Header/index';
 import { Input } from '../../components/Input/index';
 
+import { api } from '../../services/api'
 import { Column, Container, CriarText, EsqueciText, Row, SubtitleLogin, Title, TitleLogin, Wrapper } from './styles';
 
 const schema = yup
@@ -20,15 +21,21 @@ const schema = yup
 const Login = () => {
     const navigate = useNavigate();
 
-    const { control, handleSubmit, formState: { errors, isValid } } = useForm({
+    const { control, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
         mode: 'onChange',
     });
 
-    const onSubmit = data => {
-        if (isValid) {
-            console.log(data);
-            navigate('/feed');
+    const onSubmit = async formData => {
+        try{
+            const { data } = await api.get(`users?email${formData.email}&senha=${formData.password} `);
+            if(data.length === 1){
+                navigate('/feed')
+            }else{
+                alert('Email ou senha invalido ')
+            }
+        }catch{
+            alert('Houve um erro, tente novamente.')
         }
     };
 
