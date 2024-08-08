@@ -1,7 +1,7 @@
 import styled  from 'styled-components';
 
 export const Container = styled.div`
-    
+   
     width: 100%;
     max-width: 80%;
     height: 47px;
@@ -36,8 +36,6 @@ export const BuscarInputContainer = styled.div`
     margin: 0 12px;
 
     display:flex;
-    align-items: center;
-    justify-content: center;
 `
 
 export const Menu = styled.a`

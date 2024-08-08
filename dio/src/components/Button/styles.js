@@ -1,7 +1,6 @@
 import styled, {css}  from 'styled-components';
-import { IButtonStyled } from './types';
 
-export const ButtonContainer = styled.button<IButtonStyled>`
+export const ButtonContainer = styled.button`
     background: #565656;
     border-radius: 22px;
     position: relative;
@@ -16,11 +15,6 @@ export const ButtonContainer = styled.button<IButtonStyled>`
         height: 33px;
         
         background: #E4105D;
-
-       &:hover {
-            opacity: 0.6;
-            cursor: pointer;
-       }
 
         &::after {
             content: '';
